@@ -1,10 +1,10 @@
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
+
 from database import engine, get_db
 from models import Base, User, Note
 from schemas import UserCreate, UserLogin, NoteCreate, NoteResponse
-from cloud_notes.venv.Lib.auth import hash_password, verify_password, create_access_token
-from jose import jwt
+from auth import hash_password, verify_password, create_access_token
 
 app = FastAPI(title="Cloud Notes API")
 
